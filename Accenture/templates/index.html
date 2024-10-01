@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Bhoot Chat</h1>
+    <div class="chat-box" id="chat-box">
+        <!-- Chat messages will be appended here -->
+    </div>
+
+    <form id="questionForm">
+        <input type="text" id="question" placeholder="Type your question here..." required>
+        <button type="submit">
+            <i class="fas fa-paper-plane"></i> Send
+        </button>
+    </form>
+    
+    <div class="spinner" id="spinner" style="display:none;"><i class="fas fa-spinner fa-spin"></i></div>
+
+    <div class="download-options">
+        <a href="#" onclick="downloadChat('pdf')">Download as PDF</a>
+        <a href="#" onclick="downloadChat('word')">Download as Word</a>
+        <a href="#" onclick="downloadChat('txt')">Download as Text</a>
+        <a href="#" onclick="downloadChat('md')">Download as Markdown</a> <!-- New Markdown Option -->
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#questionForm').submit(function(event) {
+            event.preventDefault(); // Prevent form submission
+            const question = $('#question').val();
+            $('#question').val('');
+            $('#chat-box').append(`<div class="user-message"><i class="fas fa-user icon"></i><p><strong>You:</strong> ${question}</p></div>`);
+            $('#spinner').show();
+
+            $.ajax({
+                url: '/ask',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ question: question }),
+                success: function(response) {
+                    $('#spinner').hide();
+                    $('#chat-box').append(`<div class="bot-message"><i class="fas fa-robot icon"></i><p><strong>Chatbot:</strong> ${response.answer}</p></div>`);
+                    $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight); // Scroll to the bottom
+                },
+                error: function() {
+                    $('#spinner').hide();
+                    $('#chat-box').append(`<div class="bot-message"><i class="fas fa-robot icon"></i><p><strong>Chatbot:</strong> Error getting response.</p></div>`);
+                }
+            });
+        });
+    });
+
+    function downloadChat(format) {
+        window.location.href = `/download/${format}`;
+    }
+</script>
+
+</body>
+</html>
