@@ -54,25 +54,61 @@ body {
     box-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12; /* Gold glow on hover */
 }
 
-/* Dropdown Styling */
+/* Dropdown Container */
+.dropdown {
+    position: relative; /* Parent relative positioning */
+    display: inline-block; /* Keep it inline for menu purposes */
+}
+
+/* Dropdown Content (Initially hidden) */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #242424;
-    min-width: 160px;
-    z-index: 1;
-    border-radius: 5px;
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the dropdown container */
+    background-color: #242424; /* Dark background for dropdown */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add shadow */
+    z-index: 1; /* Ensure it's above other content */
+    border-radius: 5px; /* Rounded corners */
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
+/* Links inside dropdown */
 .dropdown-content a {
-    padding: 10px;
+    padding: 12px 16px;
     text-decoration: none;
-    display: block;
-    color: #f39c12; /* Gold color for dropdown links */
+    display: block; /* Block level for clickable area */
+    color: #f39c12; /* Gold text */
+    background-color: #242424;
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+/* Dropdown links hover */
+.dropdown-content a:hover {
+    background-color: #34495e; /* Change background on hover */
+}
+
+/* Show the dropdown when hovered or clicked */
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #201e1e;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
 }
 
 /* Container Styling */
@@ -220,4 +256,99 @@ h1,a,h3,h2 {
     .sidebar.open {
         left: 0; /* Show sidebar */
     }
+}
+
+.typing {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    border-radius: 50%;
+    background-color: #888;
+    animation: typing 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes typing {
+    0%, 100% { background-color: #888; }
+    50% { background-color: #ccc; }
+}
+
+/* Styling for the typing indicator container */
+#typing-indicator {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Style adjustments for icons and layout */
+.user-message, .bot-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-message i, .bot-message i {
+    margin-right: 10px;
+}
+
+.user-message p, .bot-message p {
+    margin: 0;
+}
+
+/* Sidebar styling */
+.sidebar h2 {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.sidebar ul li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar ul li a:hover {
+    color: #007bff;
+}
+
+/* Style for form input and button */
+#question {
+    width: calc(100% - 50px);
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button i {
+    margin-right: 5px;
 }
