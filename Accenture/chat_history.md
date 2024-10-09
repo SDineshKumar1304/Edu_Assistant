@@ -1,4 +1,0 @@
-# Chat History
-
-**You**: hi   
-
