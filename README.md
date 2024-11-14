@@ -35,10 +35,7 @@ This project demonstrates the use of Google’s Generative AI, specifically the 
    ```bash
    python app.py
 
-
-
-## The script will:
-
-Generates a multi-part story, each part accompanied by a prompt for an image.
-Fetch and display each generated image along with its associated story part.
-Compile the images and text into a downloadable PDF.
+2. The script will:
+   Generates a multi-part story, each part accompanied by a prompt for an image.
+   Fetch and display each generated image along with its associated story part.
+   Compile the images and text into a downloadable PDF.
