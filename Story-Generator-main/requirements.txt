@@ -1,5 +1,0 @@
-gunicorn
-google-generativeai
-Flask
-requests
-Pillow
