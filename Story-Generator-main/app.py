@@ -15,7 +15,9 @@ import os
 
 app = Flask(__name__)
 
-genai.configure(api_key="AIzaSyAtPsFi6PlM3Yh8AHabXjoApCPsHVkyv_E")
+with open('api.txt', 'r') as f:
+    key = f.read()
+genai.configure(api_key=key)
 
 generation_config = {
     "temperature": 1,
