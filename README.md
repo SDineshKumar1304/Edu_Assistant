@@ -29,7 +29,7 @@ This project demonstrates the use of Google’s Generative AI, specifically the 
    pip install -r requirements.txt
 
 
-Add your Google Generative AI API key to api.txt.
+3. Add your Google Generative AI API key to api.txt.
 
 ## Usage
 
