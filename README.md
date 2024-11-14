@@ -31,6 +31,7 @@ This project demonstrates the use of Google’s Generative AI, specifically the 
 Add your Google Generative AI API key to api.txt.
 
 ## Usage
+
 Run the main script and enter a story prompt:
    ```bash
    python app.py
