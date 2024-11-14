@@ -6,10 +6,10 @@ This project focuses on developing an AI-powered educational tool that enhances 
 To make complex concepts easier to understand by combining detailed explanations with suitable images, creating a more engaging and interactive learning experience.
 
 ## Features
- 1. Improves Comprehension:Visual aids help students understand and retain information better, especially for abstract subjects.
- 2. Provides Contextual Learning:Images help students connect theoretical knowledge with real-world examples.
- 3. Supports Different Learning Styles:The tool accommodates both visual and text-based learners.
- 4. Increases Engagement & Motivation:By gamifying learning, the tool keeps students engaged for longer periods.
+ 1. Improves Comprehension:Visual aids help students understand and retain information better, especially for abstract subjects.
+ 2. Provides Contextual Learning:Images help students connect theoretical knowledge with real-world examples.
+ 3. Supports Different Learning Styles:The tool accommodates both visual and text-based learners.
+ 4. Increases Engagement & Motivation:By gamifying learning, the tool keeps students engaged for longer periods.
 
 
 ## Project Structure
