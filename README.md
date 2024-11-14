@@ -36,3 +36,11 @@ Add your Google Generative AI API key to api.txt.
 Run the main script and enter a story prompt:
    ```bash
    python app.py
+
+
+
+## The script will:
+
+Generates a multi-part story, each part accompanied by a prompt for an image.
+Fetch and display each generated image along with its associated story part.
+Compile the images and text into a downloadable PDF.
