@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Education Assistant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2c2f36; /* Dark background */
+            color: #f0f0f0; /* Light text color */
+            margin: 0;
+            display: flex;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 250px;
+            background-color: #1e1e2f; /* Darker sidebar */
+            color: #fff;
+            position: fixed;
+            height: 100%;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar h2 {
+            margin: 0 0 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffde59; /* Golden color for title */
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a:hover {
+            color: #ffde59;
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        /* Main container styles */
+        .main-container {
+            flex: 1;
+            margin-left: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2c2f36;
+        }
+
+        .chat-container {
+            width: 70%;
+            height: 80%;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-box {
+            flex: 1;
+            overflow-y: auto;
+            border: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #444;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-box p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        /* User message styling with glowing effect */
+        .user {
+            text-align: right;
+            font-weight: bold;
+            color: #00f7ff; /* Neon Blue */
+            font-size: 20px;
+            text-shadow: 0 0 5px #000000, 0 0 10px #00f7ff, 0 0 15px #000000, 0 0 20px #443232; /* Strong glowing effect */
+        }
+
+        /* Bot message styling with shiny effect */
+        .bot {
+            text-align: left;
+            font-weight: normal;
+            color: #c6ff00; /* Neon Green */
+            font-size: 20px;
+            text-shadow: 0 0 5px #c6ff00, 0 0 10px #c6ff00, 0 0 15px #c6ff00, 0 0 20px #c6ff00; /* Strong glowing effect */
+        }
+
+        .story-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #ffde59; /* Golden color */
+            text-align: center;
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #444;
+            color: #f0f0f0;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #ffde59;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        button i {
+            margin-right: 8px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .story-image-card {
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .story-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>AI Education Assistant</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="#"><i class="fas fa-cogs"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="chat-container">
+            <div class="chat-box" id="chatBox"></div>
+            <div class="input-container">
+                <input type="text" id="promptInput" placeholder="Type your story prompt here...">
+                <button id="sendButton"><i class="fas fa-paper-plane"></i> Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sendButton').addEventListener('click', sendPrompt);
+        document.getElementById('promptInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendPrompt();
+            }
+        });
+
+        function sendPrompt() {
+            const prompt = document.getElementById('promptInput').value;
+            if (!prompt.trim()) return;
+
+            const chatBox = document.getElementById('chatBox');
+
+            // Display user input in chat
+            chatBox.innerHTML += `<p class="user">You: ${prompt}</p>`;
+            document.getElementById('promptInput').value = '';
+
+            // Scroll to the bottom
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Send the prompt to the Flask backend
+            fetch('/generate_story', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt: prompt }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    chatBox.innerHTML += `<p class="bot">Bot: ${data.message}</p>`;
+                } else if (data[0].title) {
+                    chatBox.innerHTML += `<p class="story-title">${data[0].title}</p>`;
+                    data.slice(1).forEach(item => {
+                        if (item.image) {
+                            const timestamp = new Date().getTime();
+                            chatBox.innerHTML += `
+                            <div class="story-image-card">
+                                <img src="${item.image}?${timestamp}" class="story-image" alt="Story Image">
+                                <p class="bot">${item.story_part}</p>
+                            </div>`;
+                        } else {
+                            chatBox.innerHTML += `<p class="bot">${item.story_part}</p>`;
+                        }
+                    });
+                } else {
+                    chatBox.innerHTML += `<p class="bot">Bot: Something went wrong. Please try again.</p>`;
+                }
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        }
+    </script>
+
+</body>
+</html>
