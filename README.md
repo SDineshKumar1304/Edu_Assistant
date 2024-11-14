@@ -23,11 +23,9 @@ This project demonstrates the use of Google’s Generative AI, specifically the 
    git clone <repo_url>
    cd project_directory
 
-
 2. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
-
 
 3. Add your Google Generative AI API key to api.txt.
 
@@ -36,6 +34,4 @@ This project demonstrates the use of Google’s Generative AI, specifically the 
 Run the main script and enter a story prompt:
    ```bash
    python app.py
-
-
 
