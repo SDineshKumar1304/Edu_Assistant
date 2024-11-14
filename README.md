@@ -12,7 +12,7 @@ This project demonstrates the use of Google’s Generative AI, specifically the 
 
 ## Project Structure
 
-- **`main.py`**: The primary script for interacting with the user, generating the story, fetching images, and compiling the PDF.
+- **`app.py`**: The primary script for interacting with the user, generating the story, fetching images, and compiling the PDF.
 - **`api.txt`**: Stores the API key for accessing Google Generative AI.
 - **`requirements.txt`**: Lists necessary dependencies such as `google.generativeai`, `reportlab`, `requests`, `Pillow`, and `opencv-python`.
 
