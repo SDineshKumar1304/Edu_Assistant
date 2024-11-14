@@ -22,3 +22,40 @@ This project demonstrates the use of Google’s Generative AI, specifically the 
    ```bash
    git clone <repo_url>
    cd project_directory
+
+
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+
+Add your Google Generative AI API key to api.txt.
+
+## Usage
+Run the main script and enter a story prompt:
+   ```bash
+   python app.py
+
+## The script will:
+
+Generates a multi-part story, each part accompanied by a prompt for an image.
+Fetch and display each generated image along with its associated story part.
+Compile the images and text into a downloadable PDF.
+
+## Configuration Details
+**Generative Model Configuration:** Uses parameters like temperature, top_p, and top_k to customize the generated output.
+**Safety Settings:** Configured to filter content for appropriate outputs.
+**PDF Generation:** Utilizes reportlab to format and style the PDF with images and text positioned accurately for a polished result.
+
+## Dependencies
+google.generativeai
+reportlab
+requests
+Pillow
+opencv-python
+textwrap
+
+## Example Output
+The generated PDF includes:
+
+
+Enjoy exploring AI-powered storytelling with this project!
