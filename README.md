@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5750b424-a78d-44e5-af6d-f0c7b370423e)# AI Education Assistant
+# AI Education Assistant
 
 ## Project Overview:
 This project focuses on developing an AI-powered educational tool that enhances learning by providing both dynamic, contextually relevant text explanations and corresponding visual content for every paragraph.
@@ -58,7 +58,9 @@ opencv-python
 textwrap
 
 ## Example Output
-The generated PDF includes:
+
+## The generated PDF includes:
+
 ![image](https://github.com/user-attachments/assets/8cd4a543-3013-4a69-b0f9-6023a3bcf73f)
 
 ![image](https://github.com/user-attachments/assets/92e70d4c-94bd-4cd6-8762-d28d508860db)
