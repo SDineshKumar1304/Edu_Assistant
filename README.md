@@ -1,14 +1,16 @@
-# AI Story Generator
+![image](https://github.com/user-attachments/assets/5750b424-a78d-44e5-af6d-f0c7b370423e)# AI Education Assistant
 
-## Project Overview
-
-This project demonstrates the use of Google’s Generative AI, specifically the `gemini-1.5-flash` model, to create interactive, image-rich stories from user-provided prompts. By generating narrative text along with image prompts, the project transforms storytelling into a visual and engaging experience, packaging everything into a downloadable PDF.
+## Project Overview:
+This project focuses on developing an AI-powered educational tool that enhances learning by providing both dynamic, contextually relevant text explanations and corresponding visual content for every paragraph.
+## Goal:
+To make complex concepts easier to understand by combining detailed explanations with suitable images, creating a more engaging and interactive learning experience.
 
 ## Features
+ 1. Improves Comprehension:Visual aids help students understand and retain information better, especially for abstract subjects.
+ 2. Provides Contextual Learning:Images help students connect theoretical knowledge with real-world examples.
+ 3. Supports Different Learning Styles:The tool accommodates both visual and text-based learners.
+ 4. Increases Engagement & Motivation:By gamifying learning, the tool keeps students engaged for longer periods.
 
-- **AI-Generated Stories**: Takes a user prompt and creates a complete storyline, with detailed scene descriptions.
-- **AI-Powered Image Generation**: Each scene includes a prompt to generate an image that visually represents the story's setting or action.
-- **PDF Output**: Compiles the story text and images into a well-structured PDF, offering users a downloadable keepsake.
 
 ## Project Structure
 
@@ -57,7 +59,12 @@ textwrap
 
 ## Example Output
 The generated PDF includes:
+![image](https://github.com/user-attachments/assets/8cd4a543-3013-4a69-b0f9-6023a3bcf73f)
+
+![image](https://github.com/user-attachments/assets/92e70d4c-94bd-4cd6-8762-d28d508860db)
+
+![image](https://github.com/user-attachments/assets/8b745e0b-e1e5-4929-87be-d8c808967972)
 
 
-Enjoy exploring AI-powered storytelling with this project!
+Enjoy exploring AI-powered Education Assitant with this project!
 
