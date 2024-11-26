@@ -22,7 +22,7 @@ To make complex concepts easier to understand by combining detailed explanations
 
 1. Clone the repository:
    ```bash
-   git clone <repo_url>
+   git clone [<repo_url>](https://github.com/SDineshKumar1304/Edu_Assistant.git)
    cd project_directory
 
 2. Install the required dependencies:
