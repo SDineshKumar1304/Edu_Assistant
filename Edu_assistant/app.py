@@ -15,7 +15,7 @@ import os
 
 app = Flask(__name__)
 
-genai.configure(api_key="AIzaSyAtPsFi6PlM3Yh8AHabXjoApCPsHVkyv_E")
+genai.configure(api_key="UR API")
 
 generation_config = {
     "temperature": 1,
